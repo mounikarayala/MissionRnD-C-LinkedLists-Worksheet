@@ -22,5 +22,20 @@ struct node {
 };
 
 void sll_012_sort(struct node *head){
-	
+	struct node *ptr1,*ptr2;
+	int t;
+	//ptr = (struct node *)malloc(sizeof(struct node));
+	ptr1 = head;
+	while (ptr1->next != NULL){
+		ptr2 = ptr1->next;
+		while (ptr2 != NULL){
+			if (ptr1->data > ptr2->data){
+				t = ptr1->data;
+				ptr1->data = ptr2->data;
+				ptr2->data = t;
+			}
+			ptr2 = ptr2->next;
+		}
+		ptr1 = ptr1->next;
+	}
 }
